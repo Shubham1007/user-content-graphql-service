@@ -1,0 +1,88 @@
+[
+  {
+    "model": "Contents.user",
+    "pk": 1,
+    "fields": {
+      "name": "Rahul sharma",
+      "details": "about rahul sharma"
+    }
+  },
+  {
+    "model": "Contents.user",
+    "pk": 2,
+    "fields": {
+      "name": "Ajay Verma",
+      "details": "about Ajay Verma"
+    }
+  },
+  {
+    "model": "Contents.user",
+    "pk": 3,
+    "fields": {
+      "name": "Sanjay kumar",
+      "details": "about Sanjay kumar"
+    }
+  },
+  {
+    "model": "Contents.user",
+    "pk": 4,
+    "fields": {
+      "name": "Vikas Gupta",
+      "details": "about Vikas gupta"
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 1,
+    "fields": {
+      "heading": "about the corona cases in india",
+      "content_data": "corona cases",
+      "user": 2
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 2,
+    "fields": {
+      "heading": "india and england match in 2020",
+      "content_data": "cricket match between india and england in 2020",
+      "user": 1
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 3,
+    "fields": {
+      "heading": "indian education system",
+      "content_data": "about indian education system",
+      "user": 2
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 4,
+    "fields": {
+      "heading": "about indian history",
+      "content_data": "indian history",
+      "user": 4
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 5,
+    "fields": {
+      "heading": "political situation in india",
+      "content_data": "about political situation in india",
+      "user": 2
+    }
+  },
+  {
+    "model": "Contents.content",
+    "pk": 6,
+    "fields": {
+      "heading": "agriculture in india",
+      "content_data": "about agriculture in india",
+      "user": 3
+    }
+  }
+]
