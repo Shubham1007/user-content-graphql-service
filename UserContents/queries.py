@@ -6,10 +6,10 @@ from Contents.models import User, Content
 class Query(graphene.ObjectType):
     user_contents = graphene.List(ContentType)
     content = graphene.Field(ContentType, id=graphene.String())
-    all_users = graphene.Field(UserType)
+    all_users = graphene.List(UserType)
     user = graphene.Field(UserType, id=graphene.String())
 
-    def resolve_content_data(parent, info):
+    def resolve_user_contents(parent, info):
         return Content.objects.all().order_by('created_at')
 
     def resolve_content(parent, info, id):
