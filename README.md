@@ -55,3 +55,35 @@ Examples: GET Query in graphql for fetching data.
   }
 }
 ```
+
+3. For fetching all users data -
+
+```
+{
+  userContents{
+    contentData,
+    id,
+    user {
+      id
+    }
+  }
+}
+
+```
+
+4. For fetching all user contents data -
+
+```
+
+{
+  allUsers{
+    details,
+    id,
+    name,
+    contents{
+      id,
+      heading
+    }
+  }
+}
+```
