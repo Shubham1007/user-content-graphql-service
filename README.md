@@ -29,13 +29,15 @@ Examples: GET Query in graphql for fetching data.
 
 ```
 {
-  user(id:"2"){
-  	contents
-    {
-      id:id
-     	createdAt
-      contentData
-    }
+  user(id:"VXNlclR5cGU6MQ=="){
+  	name
+    details
+    contents {
+        id,
+        heading,
+        createdAt
+        contentData
+      }
   }
 }
 ```
@@ -45,45 +47,50 @@ Examples: GET Query in graphql for fetching data.
 ```
 
 {
-  content(id:"1"){
-    createdAt,
-    contentData,
-    user{
-      id,
-      details
-    }
-  }
+  content(id:"Q29udGVudFR5cGU6Mg=="){
+    id: id
+    contentData
+    createdAt
+    heading
+	}
 }
 ```
 
-3. For fetching all users data -
-
-```
-{
-  userContents{
-    contentData,
-    id,
-    user {
-      id
-    }
-  }
-}
-
-```
-
-4. For fetching all user contents data -
+3. For fetching all users data using filters -
 
 ```
 
 {
-  allUsers{
-    details,
-    id,
-    name,
-    contents{
-      id,
-      heading
+  allUsers(first:3){
+  	edges{
+      node{
+        details
+        id
+      }
     }
   }
 }
+
+```
+
+4. For fetching all user contents data using filters -
+
+```
+{
+  userContents(offset:4,last:2){
+    edges{
+      node{
+        contentData
+        heading
+        createdAt
+        id
+        user{
+          id
+          details
+        }
+    }
+  }
+}
+}
+
 ```
