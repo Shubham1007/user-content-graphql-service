@@ -94,3 +94,17 @@ Examples: GET Query in graphql for fetching data.
 }
 
 ```
+
+5. For adding user mutation - 
+
+```
+
+mutation{
+  addUser(input:{name:"Shubham"}){
+    user{
+      name:name
+    }
+  }
+}
+
+```
