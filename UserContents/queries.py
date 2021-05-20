@@ -1,25 +1,14 @@
 import graphene
+from graphene_django.filter import DjangoFilterConnectionField
 from .types import UserType, ContentType
-from Contents.models import User, Content
+from .mutations import Mutation
 
 
 class Query(graphene.ObjectType):
-    user_contents = graphene.List(ContentType)
-    content = graphene.Field(ContentType, id=graphene.String())
-    all_users = graphene.List(UserType)
-    user = graphene.Field(UserType, id=graphene.String())
-
-    def resolve_user_contents(parent, info):
-        return Content.objects.all().order_by('created_at')
-
-    def resolve_content(parent, info, id):
-        return Content.objects.get(id=id)
-
-    def resolve_all_users(parent, info):
-        return User.objects.all()
-
-    def resolve_user(parent, info, id):
-        return User.objects.get(id=id)
+    user_contents = DjangoFilterConnectionField(ContentType)
+    content = graphene.relay.Node.Field(ContentType)
+    user = graphene.relay.Node.Field(UserType)
+    all_users = DjangoFilterConnectionField(UserType)
 
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query, mutation=Mutation)
